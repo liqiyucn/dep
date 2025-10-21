@@ -1,16 +1,13 @@
 {
-  "name": "Remote Dependencies Configuration",
-  "version": "1.0.1",
+  "name": "Remote Dependencies",
+  "version": "2.0.0",
   "lastUpdated": "2025-01-21",
-  "description": "Centralized dependency management configuration",
   "repositories": [
     "mavenCentral",
-    "https://maven.aliyun.com/repository/public",
-    "https://jitpack.io"
+    "https://maven.aliyun.com/repository/public"
   ],
   "dependencies": {
     "core": {
-      "description": "Core utilities",
       "libraries": {
         "implementation": [
           "org.apache.commons:commons-lang3:3.14.0",
@@ -19,7 +16,6 @@
       }
     },
     "logging": {
-      "description": "Logging framework",
       "libraries": {
         "implementation": [
           "org.slf4j:slf4j-api:2.0.9",
@@ -28,39 +24,26 @@
       }
     },
     "json": {
-      "description": "JSON processing",
       "libraries": {
         "implementation": [
-          "com.fasterxml.jackson.core:jackson-databind:2.16.1",
-          "com.google.code.gson:gson:2.10.1"
+          "com.google.code.gson:gson:2.10.1",
+          "com.fasterxml.jackson.core:jackson-databind:2.16.1"
         ]
       }
     },
     "http": {
-      "description": "HTTP clients",
       "libraries": {
         "implementation": [
           "com.squareup.okhttp3:okhttp:4.12.0"
         ]
       }
-    }
-  },
-  "profiles": {
-    "minimal": {
-      "description": "Minimal dependencies",
-      "includes": ["core", "logging"]
     },
-    "standard": {
-      "description": "Standard dependencies",
-      "includes": ["core", "logging", "json"]
-    },
-    "web": {
-      "description": "Web application dependencies",
-      "includes": ["core", "logging", "json", "http"]
-    },
-    "demo": {
-      "description": "Demo application with all features",
-      "includes": ["core", "logging", "json", "http"]
+    "testing": {
+      "libraries": {
+        "testImplementation": [
+          "org.junit.jupiter:junit-jupiter:5.10.1"
+        ]
+      }
     }
   }
 }
