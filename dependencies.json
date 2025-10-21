@@ -1,6 +1,6 @@
 {
   "name": "Remote Dependencies Configuration",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "lastUpdated": "2025-01-21",
   "description": "Centralized dependency management configuration",
   "repositories": [
@@ -56,6 +56,10 @@
     },
     "web": {
       "description": "Web application dependencies",
+      "includes": ["core", "logging", "json", "http"]
+    },
+    "demo": {
+      "description": "Demo application with all features",
       "includes": ["core", "logging", "json", "http"]
     }
   }
